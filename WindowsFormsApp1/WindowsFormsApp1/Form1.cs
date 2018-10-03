@@ -29,16 +29,6 @@ namespace WindowsFormsApp1
             listBox1.Items.Add("Other");
         }
 
-        private void PopulateList()
-        {
-            int i = 1;
-            foreach (BailCond.Condition cond in mCondList.Conditions)
-            {
-                listBox1.Items.Add(String.Format("Condition {0}: {1}", i, cond.ShortText));
-                ++i;
-            }
-        }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (var entry in mEntries)
