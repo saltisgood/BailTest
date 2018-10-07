@@ -24,14 +24,59 @@ namespace WpfApp1
         {
             InitializeComponent();
 
-            hideAll();
+            setup();
         }
 
-        private void hideAll()
+        private void setup()
         {
-            foreach (RowDefinition row in mConditionsInputGrid.RowDefinitions)
+            var aDefaultBailCond = BailCond.CreateDefault();
+            for (int j = 0; j < aDefaultBailCond.Conditions.Count; ++j)
             {
-                row.Height = new GridLength(0);
+                var aRowDef = new RowDefinition
+                {
+                    Height = new GridLength(0)
+                };
+                mConditionsInputGrid.RowDefinitions.Add(aRowDef);
+            }
+
+            int i = 0;
+            foreach (var aCond in aDefaultBailCond.Conditions)
+            {
+                mConditionList.Items.Add(new ListBoxItem { Content = aCond.ShortText });
+
+                var aPanel = new WrapPanel
+                {
+                    HorizontalAlignment = HorizontalAlignment.Stretch,
+                    Margin = new Thickness(0),
+                    VerticalAlignment = VerticalAlignment.Top
+                };
+                mConditionsInputGrid.Children.Add(aPanel);
+                Grid.SetRow(aPanel, i);
+
+                foreach (var aTextBlock in aCond.TextBlocks)
+                {
+                    UIElement aTextElem;
+                    if (!aTextBlock.Editable)
+                    {
+                        aTextElem = new Label
+                        {
+                            Margin = new Thickness(10),
+                            Content = aTextBlock.Value
+                        };
+                    }
+                    else
+                    {
+                        aTextElem = new TextBox
+                        {
+                            Height = 23,
+                            TextWrapping = TextWrapping.Wrap,
+                            Width = 120
+                        };
+                    }
+                    aPanel.Children.Add(aTextElem);
+                }
+
+                ++i;
             }
         }
 

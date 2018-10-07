@@ -12,28 +12,8 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <ListBox x:Name="mConditionList" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Width="300" SelectionMode="Multiple" SelectionChanged="mConditionList_SelectionChanged">
-            <ListBoxItem Content="Name"/>
-            <ListBoxItem Content="Address"/>
-            <ListBoxItem Content="Other"/>
         </ListBox>
         <Grid x:Name="mConditionsInputGrid" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Width="400">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <WrapPanel Grid.Row="0" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Top">
-                <Label Content="Hello my name is:" Margin="10"/>
-                <TextBox Height="23" TextWrapping="Wrap" Text="" Width="120"/>
-            </WrapPanel>
-            <WrapPanel Grid.Row="1" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Top">
-                <Label Content="I live at:" Margin="10"/>
-                <TextBox Height="23" TextWrapping="Wrap" Text="" Width="120"/>
-            </WrapPanel>
-            <WrapPanel HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" VerticalAlignment="Top">
-                <Label Content="Other" Margin="10"/>
-                <TextBox Height="23" TextWrapping="Wrap" Text="" Width="120"/>
-            </WrapPanel>
         </Grid>
     </Grid>
 </Window>
