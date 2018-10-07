@@ -46,7 +46,7 @@ namespace WpfApp1
         {
             public bool Enabled;
             public String ShortText { get; private set; }
-            private List<TextBlock> mTextBlocks;
+            private readonly List<TextBlock> mTextBlocks;
             public IReadOnlyList<TextBlock> TextBlocks
             {
                 get
@@ -65,7 +65,7 @@ namespace WpfApp1
 
         public class ConditionFactory
         {
-            private List<TextBlock> mTextBlocks;
+            private readonly List<TextBlock> mTextBlocks;
 
             public ConditionFactory()
             {
