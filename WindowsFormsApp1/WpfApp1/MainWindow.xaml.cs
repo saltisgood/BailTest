@@ -52,6 +52,8 @@ namespace WpfApp1
                 mConditionsInputGrid.RowDefinitions.Add(aRowDef);
             }
 
+            BailCond.GenderFormat aGender = BailCond.GenderFormat.Female;
+
             int i = 0;
             foreach (var aCond in mBailCond.Conditions)
             {
@@ -86,7 +88,7 @@ namespace WpfApp1
                         aTextElem = new Label
                         {
                             Margin = new Thickness(10),
-                            Content = aTextBlock.Value
+                            Content = String.Format(aTextBlock.Value, aGender)
                         };
                     }
                     else
