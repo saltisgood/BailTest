@@ -39,6 +39,7 @@ namespace WpfApp1
             mConditionPanels = new List<WrapPanel>();
             mBailCond = BailCond.CreateDefault();
             Setup();
+            MaleButton.IsChecked = true;
         }
 
         private void Setup()
@@ -51,8 +52,6 @@ namespace WpfApp1
                 };
                 mConditionsInputGrid.RowDefinitions.Add(aRowDef);
             }
-
-            BailCond.GenderFormat aGender = BailCond.GenderFormat.Female;
 
             int i = 0;
             foreach (var aCond in mBailCond.Conditions)
@@ -80,31 +79,7 @@ namespace WpfApp1
                 Grid.SetRow(aPanel, i);
                 mConditionPanels.Add(aPanel);
 
-                foreach (var aTextBlock in aCond.TextBlocks)
-                {
-                    UIElement aTextElem;
-                    if (!aTextBlock.Editable)
-                    {
-                        aTextElem = new Label
-                        {
-                            Margin = new Thickness(10),
-                            Content = String.Format(aTextBlock.Value, aGender)
-                        };
-                    }
-                    else
-                    {
-                        int aMinSize = aTextBlock.MinSize != 0 ? aTextBlock.MinSize : 120;
-
-                        // Values are just placeholders
-                        aTextElem = new TextBox
-                        {
-                            Height = 23,
-                            TextWrapping = TextWrapping.Wrap,
-                            Width = aMinSize
-                        };
-                    }
-                    aPanel.Children.Add(aTextElem);
-                }
+                //UpdateGender(BailCond.EGender.Male);
 
                 ++i;
             }
@@ -175,6 +150,31 @@ namespace WpfApp1
             Storyboard.SetTargetProperty(aThickAnim, new PropertyPath(WrapPanel.MarginProperty));
 
             aStoryBoard.Begin(this);
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateGender(sender == MaleButton ? BailCond.EGender.Male : BailCond.EGender.Female);
+        }
+
+        private void UpdateGender(BailCond.EGender iNewGender)
+        {
+            if (mBailCond == null)
+                return; // Happens on first construction
+
+            for (int i = 0; i < mBailCond.Conditions.Count; ++i)
+            {
+                var aCond = mBailCond.Conditions[i];
+                var aPanel = mConditionPanels[i];
+
+                // TODO: only recreate the static text
+                aPanel.Children.Clear();
+
+                foreach (var aCondElem in aCond.CondElems)
+                {
+                    aPanel.Children.Add(aCondElem.Create(iNewGender));
+                }
+            }
         }
     }
 }

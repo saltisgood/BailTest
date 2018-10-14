@@ -11,8 +11,18 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="mConditionList" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Width="300" SelectionMode="Multiple" SelectionChanged="mConditionList_SelectionChanged">
-        </ListBox>
+        <Grid HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0" Height="Auto">
+                <Label Content="Gender:" Margin="10"/>
+                <RadioButton Name="MaleButton" Content="Male" Margin="10" GroupName="GenderGroup" Checked="RadioButton_Checked"/>
+                <RadioButton Name="FemaleButton" Content="Female" Margin="10" GroupName="GenderGroup" Checked="RadioButton_Checked"/>
+            </WrapPanel>
+            <ListBox x:Name="mConditionList" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Width="300" SelectionMode="Multiple" SelectionChanged="mConditionList_SelectionChanged"/>
+        </Grid>
         <Grid x:Name="mConditionsInputGrid" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Width="400">
         </Grid>
     </Grid>
