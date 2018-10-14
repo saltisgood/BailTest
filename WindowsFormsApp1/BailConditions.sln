@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{AC7DCA82-5749-41E4-BCB2-1D1488EC3FFC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{DE4FD880-6D99-43E1-90DE-B97EB2A97720}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BailCondWPF", "WpfApp1\BailCondWPF.csproj", "{DE4FD880-6D99-43E1-90DE-B97EB2A97720}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AC7DCA82-5749-41E4-BCB2-1D1488EC3FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC7DCA82-5749-41E4-BCB2-1D1488EC3FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC7DCA82-5749-41E4-BCB2-1D1488EC3FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC7DCA82-5749-41E4-BCB2-1D1488EC3FFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DE4FD880-6D99-43E1-90DE-B97EB2A97720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DE4FD880-6D99-43E1-90DE-B97EB2A97720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE4FD880-6D99-43E1-90DE-B97EB2A97720}.Release|Any CPU.ActiveCfg = Release|Any CPU

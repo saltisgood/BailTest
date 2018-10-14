@@ -93,12 +93,14 @@ namespace WpfApp1
                     }
                     else
                     {
+                        int aMinSize = aTextBlock.MinSize != 0 ? aTextBlock.MinSize : 120;
+
                         // Values are just placeholders
                         aTextElem = new TextBox
                         {
                             Height = 23,
                             TextWrapping = TextWrapping.Wrap,
-                            Width = 120
+                            Width = aMinSize
                         };
                     }
                     aPanel.Children.Add(aTextElem);
