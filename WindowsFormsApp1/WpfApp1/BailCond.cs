@@ -189,12 +189,12 @@ namespace WpfApp1
 
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is to be of good behaviour."))
-                .Create("Good behaviour"));
+                .Create("01 - Good behaviour"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is to live at"))
                 .Add(InputText.Address)
                 .Add(new StaticText("."))
-                .Create("Address"));
+                .Create("02 - Live at"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is to report to"))
                 .Add(InputText.Address)
@@ -203,20 +203,20 @@ namespace WpfApp1
                 .Add(new StaticText("and"))
                 .Add(new InputText())
                 .Add(new StaticText("."))
-                .Create("Report to"));
+                .Create("03 - Report to"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is to appear at"))
                 .Add(InputText.Address)
                 .Add(new StaticText("Court on"))
                 .Add(new InputText())
                 .Add(new StaticText("and thereafter as required."))
-                .Create("Appear at"));
+                .Create("04 - Appear at"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is not to drink alcohol or enter any premises in which alcohol is sold."))
-                .Create("Alcohol"));
+                .Create("05 - Alcohol"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is not to take any illegal or prescription drugs (other than a drug prescribed to the applicant by a doctor)."))
-                .Create("Drugs"));
+                .Create("06 - Drugs"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("To comply with a curfew: the applicant is not to be absent from the address at which {0:g} is required to live between the " +
                 "hours of"))
@@ -226,91 +226,101 @@ namespace WpfApp1
                 .Add(new StaticText("am except if {0:g} is in the company of"))
                 .Add(InputText.Name)
                 .Add(new StaticText("."))
-                .Create("Curfew"));
+                .Create("07 - Curfew"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is not to associate or communicate by any means (except through his lawyer) with"))
                 .Add(InputText.Name)
                 .Add(new StaticText("."))
-                .Create("Associate"));
+                .Create("08 - Non-association"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("Not to have any contact in any way (including via a third party) with"))
                 .Add(InputText.Name)
                 .Add(new StaticText("."))
-                .Create("Forbidden contact"));
+                .Create("09 - Non-contact"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("To undertake a course of rehabilitation at "))
                 .Add(InputText.Address)
                 .Add(new StaticText(". {0:G} is to obey any reasonable direcion given by the person for the time being in charge." +
                 "{0:G} is not to leave that institution until the rehabilitation program is completed except for the purpose of complying with " +
                 "reporting conditions, for conferences with legal advisors or attending court."))
-                .Create("Rehabilitation"));
+                .Create("10 - Rehabilitation"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("The applicant is to travel from the correctional centre from which {0:g} is to be released " +
                 "on bail in the company of"))
                 .Add(InputText.Name)
                 .Add(new StaticText("who must be in attendance at the correctional centre before the applicant is released."))
-                .Create("Travel"));
+                .Create("11 - Travel from CC"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is to surrender {0:p} passport to"))
                 .Add(InputText.Name)
-                .Create("Passport Surrender"));
+                .Create("12 - Passport surrender"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is not to apply for any new passport or travel document."))
-                .Create("Passport Application"));
+                .Create("13 - No new passport "));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("{0:G} is not to go within "))
                 .Add(new InputText())
                 .Add(new StaticText("of any point of departure from the Commonwealth of Australia."))
-                .Create("Travel"));
+                .Create("14 - Airport proximity"));
 
             // security
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("The applicant is to enter into an agreement under which {0:g} agrees to forfeit $"))
                 .Add(new InputText())
                 .Add(new StaticText("if {0:g} fails to appear before court in accordance with the bail acknowledgment."))
-                .Create("Bail forfeit"));
+                .Create("15 - Self-surety agreement"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("The applicant is to deposit $"))
                 .Add(new InputText())
                 .Add(new StaticText("and agree to forfeit it if he fails to appear before court in accordance with the bail acknowledgment."))
-                .Create("Deposit bail money"));
+                .Create("16 - Self-surety deposited"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("The applicant is to deposit acceptable security as security for the payment of $"))
                 .Add(new InputText())
                 .Add(new StaticText("which he aggress to forfeit if he fails to appear before court in accordance with the bail acknowledgement."))
-                .Create("Security"));
+                .Create("17 - Self-surety secured"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("One (or more) acceptable person(s) is to enter into an agreement under which he/she agrees to forfeit $"))
                 .Add(new InputText())
                 .Add(new StaticText("if the applicant fails to appear before court in accordance with the bail acknowledgment. I find such acceptable " +
                 "person to be"))
                 .Add(new InputText())
-                .Create("Security person"));
+                .Create("18 - Surety agreement"));
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("One (or more) acceptable person(s) is to deposit $"))
                 .Add(new InputText())
                 .Add(new StaticText("and agree to forfeit it if the applicant fails to appear before court in accordance with the bail acknowledgment. " +
                 "I find such acceptable person to be"))
                 .Add(new InputText())
-                .Create("Some other dude"));
+                .Create("19 - Surety deposited"));
+            c.mConditions.Add(new ConditionFactory()
+                .Add(new StaticText("One (or more) acceptable person(s) is to deposit acceptable security as security for the payment of $"))
+                .Add(new InputText())
+                .Add(new StaticText("which he/she agrees to forfeit if the applicant fails to appear before the court in accordance with the bail " +
+                "acknowledgement.  I find such acceptable person to be"))
+                .Add(new InputText())
+                .Create("20 - Surety secured"));
+
             // character
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("One (or more) acceptable person(s) is to provide an acknowledgment that he/she is acquainted with the applicant and " +
                 "that he/she regards the applicant as a responsible person who is likely to comply with the bail acknowledgment. I find such acceptable person to be"))
                 .Add(new InputText())
-                .Create("Character acknowledgment"));
+                .Create("21 - Character acknowledgement"));
+
             // enforcement
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("Enforcement of curfew condition: To present himself at the front door at the direction of any police offer to confirm " +
                 "compliance with the curfew condition. Such direction may only be given by a police officer who believes on reasonable grounds that it is necessary " +
                 "to do so, having regard to the rights of other occupants of the premises to peace and privacy."))
-                .Create("Curfew enforcement"));
+                .Create("22 - Curfew enforcement"));
+
             c.mConditions.Add(new ConditionFactory()
                 .Add(new StaticText("Enforcement of drug/alcohol abstention condition: To undertake any testing at the direction of any police officer to " +
                 "confirm compliance with the drug/alcohol abstention condition. Such direction may only be given by a police officer who believes on reasonable grounds " +
                 "that the applicant may have consumed drugs/alcohol in breach of the bail acknowledgment. Such testing may only be non-invasive and carried out with " +
                 "respect given to the applicant's privacy."))
-                .Create("Drug enforcement"));
+                .Create("23 - Drug/Alcohol enforcement"));
             
             return c;
         }

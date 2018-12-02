@@ -5,25 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" ShowGridLines="True">
+        Title="MainWindow" Height="800" Width="1200">
+    
+    <Grid HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch" ShowGridLines="False">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="270"/>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="925"/>
         </Grid.ColumnDefinitions>
+        
         <Grid HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <WrapPanel Grid.Row="0" Height="Auto">
-                <Label Content="Gender:" Margin="10"/>
-                <RadioButton Name="MaleButton" Content="Male" Margin="10" GroupName="GenderGroup" Checked="RadioButton_Checked"/>
-                <RadioButton Name="FemaleButton" Content="Female" Margin="10" GroupName="GenderGroup" Checked="RadioButton_Checked"/>
-            </WrapPanel>
-            <ListBox x:Name="mConditionList" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Width="300" SelectionMode="Multiple" SelectionChanged="mConditionList_SelectionChanged"/>
+            <Border Grid.Row="0" Height="Auto" Padding="0" Background="#AAAAAA">
+                <Border Grid.Row="0" Height="Auto" Margin="1,1,1,0" Padding="0" Background="#DDDDDD">
+                    <WrapPanel>
+                        <Label Content="Gender:" Margin="10, 10, 10, 10"/>
+                        <RadioButton Name="MaleButton" Content="Male" Margin="10, 16, 10, 10" GroupName="GenderGroup" Checked="RadioButton_Checked"/>
+                        <RadioButton Name="FemaleButton" Content="Female" Margin="10, 16, 10, 10" GroupName="GenderGroup" Checked="RadioButton_Checked"/>
+                    </WrapPanel>
+                </Border>
+            </Border>
+            <ListBox x:Name="mConditionList" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Width="270" SelectionMode="Multiple" SelectionChanged="mConditionList_SelectionChanged"/>
         </Grid>
-        <Grid x:Name="mConditionsInputGrid" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Width="400">
+        <Grid x:Name="mConditionsInputGrid" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Width="925">
         </Grid>
     </Grid>
 </Window>
